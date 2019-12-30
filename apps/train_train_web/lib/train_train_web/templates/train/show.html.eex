@@ -1,0 +1,18 @@
+<h1>Show Train</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @train.name %>
+  </li>
+
+  <li>
+    <strong>Number of seats:</strong>
+    <%= @train.number_of_seats %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.train_path(@conn, :edit, @train) %></span>
+<span><%= link "Back", to: Routes.train_path(@conn, :index) %></span>

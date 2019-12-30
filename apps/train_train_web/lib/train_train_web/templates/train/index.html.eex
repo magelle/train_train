@@ -1,0 +1,28 @@
+<h1>Listing Trains</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Number of seats</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for train <- @trains do %>
+    <tr>
+      <td><%= train.name %></td>
+      <td><%= train.number_of_seats %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.train_path(@conn, :show, train) %></span>
+        <span><%= link "Edit", to: Routes.train_path(@conn, :edit, train) %></span>
+        <span><%= link "Delete", to: Routes.train_path(@conn, :delete, train), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Train", to: Routes.train_path(@conn, :new) %></span>
