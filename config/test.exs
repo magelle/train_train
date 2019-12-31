@@ -16,3 +16,21 @@ config :train_train_web, TrainTrainWeb.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
+
+# Train Ticket App
+config :train_ticket,
+       TrainTicket.EventStore,
+       serializer: Commanded.Serialization.JsonSerializer,
+       username: "postgres",
+       password: "traintrain",
+       database: "train_ticket_ev_test",
+       hostname: "localhost",
+       pool_size: 10
+
+config :train_ticket,
+       TrainTicket.Repo,
+       username: "postgres",
+       password: "traintrain",
+       database: "train_train_projections_test",
+       hostname: "localhost",
+       pool: Ecto.Adapters.SQL.Sandbox

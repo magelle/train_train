@@ -19,7 +19,7 @@ The goal here is to try to do a fully working event sourced system with elixir.
   - [V] Display the elements of the table
   - [V] Add modify and delete feature
   - [V] Test everything, we are not that rude !
-- [ ] Add interfaces on top of the Ecto CRUD
+- [V] Add interfaces on top of the Ecto CRUD
 - [ ] add event sourcing on top of CRUD
 - [ ] Learned skills to write a software which handle train ticket reservation
 - [ ] Do some load tests
@@ -37,3 +37,5 @@ mix ecto.migrate
 To create a new migration script, do :
 ```mix ecto.gen.migration```
 
+Dispatch an event : 
+```TrainTicket.Application.dispatch(%TrainTicket.Commands.Create{uuid: "4438a241-f50a-495c-b167-dd749aeb673f", name: "My event"})```
