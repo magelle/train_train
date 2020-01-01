@@ -21,6 +21,10 @@ defmodule TrainTrainWeb.Router do
     scope "/trains" do
       resources "/", TrainController
     end
+
+    scope "/tickets" do
+      resources "/", TicketController
+    end
   end
 
   # Other scopes may use custom stacks.

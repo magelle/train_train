@@ -1,0 +1,18 @@
+<h1>Show Ticket</h1>
+
+<ul>
+
+  <li>
+    <strong>Uuid:</strong>
+    <%= @ticket.uuid %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @ticket.name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.ticket_path(@conn, :edit, @ticket.uuid) %></span>
+<span><%= link "Back", to: Routes.ticket_path(@conn, :index) %></span>

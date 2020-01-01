@@ -1,0 +1,14 @@
+<%= form_for @changeset, @action, fn f -> %>
+
+  <%= label f, :uuid %>
+  <%= text_input f, :uuid %>
+  <%= error_tag f, :uuid %>
+
+  <%= label f, :name %>
+  <%= text_input f, :name %>
+  <%= error_tag f, :name %>
+
+  <div>
+    <%= submit "Save" %>
+  </div>
+<% end %>
