@@ -20,8 +20,13 @@ The goal here is to try to do a fully working event sourced system with elixir.
   - [V] Add modify and delete feature
   - [V] Test everything, we are not that rude !
 - [V] Add interfaces on top of the Ecto CRUD
-- [ ] add event sourcing on top of CRUD
-- [ ] Learned skills to write a software which handle train ticket reservation
+- [V] add event sourcing on top of CRUD
+  - [V] Create an Aggregate
+  - [V] Be able to handle command
+  - [V] Be able to handle events
+  - [V] Be able to query a projection
+  - [V] Bind everything to a HTML GUI
+- [ ] Learned skills by writing a software which handle train ticket reservation
 - [ ] Do some load tests
 
 
