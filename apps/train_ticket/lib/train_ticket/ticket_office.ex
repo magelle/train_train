@@ -10,7 +10,7 @@ defmodule TrainTicket.TicketOffice do
   end
 
   def create_ticket(%Create{uuid: uuid} = create) do
-    Application.dispatch(create)
+    Application.dispatch(create, consistency: :strong)
   end
 
   def get_ticket!(uuid) do
