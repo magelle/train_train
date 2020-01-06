@@ -44,3 +44,8 @@ To create a new migration script, do :
 
 Dispatch an event : 
 ```TrainTicket.Application.dispatch(%TrainTicket.Commands.Create{uuid: "4438a241-f50a-495c-b167-dd749aeb673f", name: "My event"})```
+
+### Observer
+
+Run the observer to display lot of informations about the running elixir programs
+```:observer.start```
