@@ -6,3 +6,6 @@ create role train_train_user WITH LOGIN createdb PASSWORD 'train_train_password'
 
 create database train_train_dev OWNER = train_train_user;
 create database train_train_test OWNER = train_train_user;
+
+create database train_ticket_ev_test ;
+create database train_train_projections_test ;
