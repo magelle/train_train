@@ -1,6 +1,8 @@
 defmodule TrainTicketAggregateTest do
   use TrainTicket.DataCase
 
+  import Commanded.Assertions.EventAssertions
+
   alias TrainTicket.Application
   alias TrainTicket.Commands.Create
   alias TrainTicket.Events.Created
@@ -19,28 +21,14 @@ defmodule TrainTicketAggregateTest do
     )
   end
 
-#  test "Should refuse to create a ticket with an existing ID" do
-#    uuid = UUID.uuid4()
-#    append_before [%Create{uuid: uuid, name: "a name"}]
-#
-#    assert :ok != Application.dispatch(%Create{uuid: uuid, name: "another name"})
-#  end
+  test "Should refuse to create a ticket with an existing ID" do
+      uuid = UUID.uuid4()
+      append_before %Create{uuid: uuid, name: "a name"}
 
-  def append_before(event) do
-    causation_id = UUID.uuid4()
-    correlation_id = UUID.uuid4()
-
-    event_data = %Commanded.EventStore.EventData{
-      causation_id: causation_id,
-      correlation_id: correlation_id,
-      event_type: Commanded.EventStore.TypeProvider.to_string(event),
-      data: event,
-      metadata: %{},
-    }
-
-    stream_uuid = event.uuid
-    expected_version = 0
-    {:ok, _} = Commanded.EventStore.append_to_stream(Application, stream_uuid, expected_version, [event_data])
+      assert {:error, :already_created} == Application.dispatch(%Create{uuid: uuid, name: "another name"})
   end
 
+  def append_before(event) do
+    Application.dispatch(event)
+  end
 end

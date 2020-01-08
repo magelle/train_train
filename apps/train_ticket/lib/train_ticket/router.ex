@@ -3,5 +3,5 @@ defmodule TrainTicket.Router do
   alias TrainTicket.Commands.Create
   alias TrainTicket.TrainTicketAggregate
 
-  dispatch Create, to: TrainTicketAggregate, identity: :uuid
+  dispatch(Create, to: TrainTicketAggregate, identity: :uuid)
 end

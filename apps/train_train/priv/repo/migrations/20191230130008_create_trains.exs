@@ -8,6 +8,5 @@ defmodule TrainTrain.Repo.Migrations.CreateTrains do
 
       timestamps()
     end
-
   end
 end

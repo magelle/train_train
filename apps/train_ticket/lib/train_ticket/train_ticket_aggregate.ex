@@ -11,11 +11,10 @@ defmodule TrainTicket.TrainTicketAggregate do
   end
 
   def execute(%TrainTicketAggregate{}, %Create{}),
-      do: {:error, :already_created}
+    do: {:error, :already_created}
 
   # State mutator
   def apply(%TrainTicketAggregate{}, %Created{uuid: uuid, name: name}) do
     %TrainTicketAggregate{uuid: uuid, name: name}
   end
-
 end

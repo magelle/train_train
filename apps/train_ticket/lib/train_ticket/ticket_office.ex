@@ -1,5 +1,4 @@
 defmodule TrainTicket.TicketOffice do
-
   alias TrainTicket.Application
   alias TrainTicket.Commands.Create
   alias TrainTicket.Repo
@@ -18,7 +17,6 @@ defmodule TrainTicket.TicketOffice do
   end
 
   def update_ticket(_uuid, _ticket) do
-
   end
 
   def delete_ticket(ticket) do

@@ -10,8 +10,9 @@ defmodule TrainTicket.DataCase do
     end
   end
 
-  setup do
+  setup_all do
     {:ok, _} = Application.ensure_all_started(:train_ticket)
+    TrainTicket.Storage.reset!()
 
     on_exit(fn ->
       :ok = Application.stop(:train_ticket)
