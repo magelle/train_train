@@ -22,10 +22,11 @@ defmodule TrainTicketAggregateTest do
   end
 
   test "Should refuse to create a ticket with an existing ID" do
-      uuid = UUID.uuid4()
-      append_before %Create{uuid: uuid, name: "a name"}
+    uuid = UUID.uuid4()
+    append_before(%Create{uuid: uuid, name: "a name"})
 
-      assert {:error, :already_created} == Application.dispatch(%Create{uuid: uuid, name: "another name"})
+    assert {:error, :already_created} ==
+             Application.dispatch(%Create{uuid: uuid, name: "another name"})
   end
 
   def append_before(event) do
