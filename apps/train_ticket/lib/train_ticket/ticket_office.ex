@@ -8,7 +8,7 @@ defmodule TrainTicket.TicketOffice do
     Repo.all(TrainTicketProjection)
   end
 
-  def create_ticket(%Create{uuid: uuid} = create) do
+  def create_ticket(%Create{} = create) do
     Application.dispatch(create, consistency: :strong)
   end
 

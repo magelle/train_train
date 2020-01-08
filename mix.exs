@@ -31,6 +31,10 @@ defmodule TrainTrain.Umbrella.MixProject do
   #
   # See the documentation for `Mix` for more info on aliases.
   defp aliases do
-    [resetdb: ["ecto.drop", "ecto.create", "ecto.migrate"]]
+    [
+      "ecto.setup": ["ecto.create", "ecto.migrate"],
+      "ecto.reset": ["ecto.drop", "ecto.setup"],
+      reset: ["ecto.reset", "event_store.reset"]
+    ]
   end
 end

@@ -29,7 +29,7 @@ config :train_ticket,
        password: "traintrain",
        database: "train_ticket_ev_test",
        hostname: "localhost",
-       pool_size: 10
+       pool_size: 1
 
 config :train_ticket,
        TrainTicket.Repo,
