@@ -26,10 +26,12 @@ The goal here is to try to do a fully working event sourced system with elixir.
   - [V] Be able to handle events
   - [V] Be able to query a projection
   - [V] Bind everything to a HTML GUI
-  - [ ] Tests !!!
+  - [V] Tests !!!
     - [V] Test the aggregate
     - [V] Test the projection
-    - [ ] Test an event handler
+    - [V] Test an event handler
+- [V] Do some dependency injection
+    - [V] With Behaviour
 - [ ] Learned skills by writing a software which handle train ticket reservation
 - [ ] Do some load tests, to see how it' goes
 

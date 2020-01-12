@@ -38,3 +38,5 @@ config :train_ticket,
        database: "train_train_projections_test",
        hostname: "localhost",
        pool: Ecto.Adapters.SQL.Sandbox
+
+config :train_ticket, :log_writer, TrainTicket.Test.LogWriter

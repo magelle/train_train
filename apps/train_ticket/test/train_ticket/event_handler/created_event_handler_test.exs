@@ -15,5 +15,12 @@ defmodule CreatedEventHandlerTest do
     metadata = %{event_number: 1}
 
     assert :ok == CreatedEventHandler.handle(event, metadata)
+
+    receive do
+      {:msg, msg} ->
+        assert msg == "I received #{name} de #{uuid}"
+    after
+      50 -> assert false # wait 50ms for this message, else fails
+    end
   end
 end
