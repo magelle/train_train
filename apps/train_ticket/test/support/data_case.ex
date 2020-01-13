@@ -1,6 +1,6 @@
 defmodule TrainTicket.DataCase do
   use ExUnit.CaseTemplate
-
+  alias Ecto.Adapters.SQL.Sandbox
   @moduledoc """
     Helper to config storage for tests
   """
@@ -16,7 +16,7 @@ defmodule TrainTicket.DataCase do
 
   setup do
     {:ok, _} = Application.ensure_all_started(:train_ticket)
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(TrainTicket.Repo)
+    :ok = Sandbox.checkout(TrainTicket.Repo)
 
     on_exit(
       fn ->

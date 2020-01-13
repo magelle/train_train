@@ -1,4 +1,6 @@
 defmodule TrainTicket.Storage do
+  alias EventStore.Storage
+
   @moduledoc """
     Storage helperr which reset the event store between two tests
   """
@@ -17,6 +19,6 @@ defmodule TrainTicket.Storage do
 
     {:ok, conn} = Postgrex.start_link(config)
 
-    EventStore.Storage.Initializer.reset!(conn)
+    Storage.Initializer.reset!(conn)
   end
 end

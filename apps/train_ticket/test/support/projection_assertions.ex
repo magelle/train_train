@@ -1,11 +1,10 @@
 defmodule TrainTicket.ProjectionAssertions do
   import ExUnit.Assertions
-
+  alias Ecto.Adapters.SQL
+  alias TrainTicket.Repo
   @moduledoc """
     Assertions for the event store
   """
-
-  alias TrainTicket.Repo
 
   def assert_projections(schema, expected) do
     actual =
@@ -18,7 +17,7 @@ defmodule TrainTicket.ProjectionAssertions do
   def assert_seen_event(projection_name, expected_last_seen)
       when is_binary(projection_name) and is_integer(expected_last_seen) do
     assert {:ok, %{rows: [[^expected_last_seen]], num_rows: 1}} =
-             Ecto.Adapters.SQL.query(
+             SQL.query(
                Repo,
                "SELECT last_seen_event_number from projection_versions where projection_name = $1",
                [projection_name]
