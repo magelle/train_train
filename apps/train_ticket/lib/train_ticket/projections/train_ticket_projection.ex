@@ -1,4 +1,8 @@
 defmodule TrainTicket.TrainTicketProjection do
+  @moduledoc """
+    The train ticket main projection
+  """
+
   use Ecto.Schema
   @primary_key {:uuid, :string, []}
 

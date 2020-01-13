@@ -1,4 +1,8 @@
 defmodule TrainTicket.Storage do
+  @moduledoc """
+    Storage helperr which reset the event store between two tests
+  """
+
   @doc """
   Clear the event store and read store databases
   """

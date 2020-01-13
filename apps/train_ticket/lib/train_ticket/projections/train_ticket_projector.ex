@@ -1,4 +1,8 @@
 defmodule TrainTicket.TrainTicketProjector do
+  @moduledoc """
+    Project the train tickets
+  """
+
   use Commanded.Projections.Ecto,
     application: TrainTicket.Application,
     repo: TrainTicket.Repo,

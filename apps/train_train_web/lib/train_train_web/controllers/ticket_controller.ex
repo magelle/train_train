@@ -1,8 +1,8 @@
 defmodule TrainTrainWeb.TicketController do
   use TrainTrainWeb, :controller
 
-  alias TrainTicket.TicketOffice
   alias TrainTicket.Commands.Create
+  alias TrainTicket.TicketOffice
   alias TrainTicket.TrainTicketProjection
 
   def index(conn, _params) do

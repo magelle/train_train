@@ -1,8 +1,8 @@
 defmodule TrainTicketProjectorTest do
   use TrainTicket.DataCase
 
-  alias TrainTicket.TrainTicketProjector
   alias TrainTicket.Repo
+  alias TrainTicket.TrainTicketProjector
 
   test "Create a ticket when receive the Created event" do
     uuid = UUID.uuid4()

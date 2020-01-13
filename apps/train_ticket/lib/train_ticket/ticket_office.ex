@@ -3,6 +3,9 @@ defmodule TrainTicket.TicketOffice do
   alias TrainTicket.Commands.Create
   alias TrainTicket.Repo
   alias TrainTicket.TrainTicketProjection
+  @moduledoc """
+    TicketOffice is the entrypoint to make reservation and get ticket
+  """
 
   @typedoc """
    a uuid, e.g. eb0ecdb1-06af-4644-8f5e-4b9ce69594d8
@@ -10,7 +13,7 @@ defmodule TrainTicket.TicketOffice do
   @type id :: String.t()
 
   @spec list_tickets() :: [%TrainTicketProjection{}]
-  def list_tickets() do
+  def list_tickets do
     Repo.all(TrainTicketProjection)
   end
 

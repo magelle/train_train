@@ -1,4 +1,7 @@
 defmodule TrainTicket.CreatedEventHandler do
+  @moduledoc """
+    Just print the events
+  """
   use Commanded.Event.Handler,
     application: TrainTicket.Application,
     name: __MODULE__,

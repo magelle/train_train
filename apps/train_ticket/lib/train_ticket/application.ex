@@ -1,4 +1,7 @@
 defmodule TrainTicket.Application do
+  @moduledoc """
+    TrainTicket Applicaiton
+  """
   use Commanded.Application,
     otp_app: :train_ticket,
     event_store: [

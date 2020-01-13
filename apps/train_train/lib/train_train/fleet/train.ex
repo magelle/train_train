@@ -1,6 +1,9 @@
 defmodule TrainTrain.Fleet.Train do
   use Ecto.Schema
   import Ecto.Changeset
+  @moduledoc """
+    Train schemas
+  """
 
   schema "trains" do
     field :name, :string

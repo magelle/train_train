@@ -1,6 +1,10 @@
 defmodule TrainTicket.TrainTicketAggregate do
   defstruct [:uuid, :name]
 
+  @moduledoc """
+    Aggregate which handle train tickets
+  """
+
   alias TrainTicket.Commands.Create
   alias TrainTicket.Events.Created
   alias TrainTicket.TrainTicketAggregate
@@ -11,7 +15,7 @@ defmodule TrainTicket.TrainTicketAggregate do
   end
 
   def execute(%TrainTicketAggregate{}, %Create{}),
-    do: {:error, :already_created}
+      do: {:error, :already_created}
 
   # State mutator
   def apply(%TrainTicketAggregate{}, %Created{uuid: uuid, name: name}) do

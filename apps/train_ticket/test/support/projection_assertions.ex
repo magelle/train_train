@@ -1,6 +1,10 @@
 defmodule TrainTicket.ProjectionAssertions do
   import ExUnit.Assertions
 
+  @moduledoc """
+    Assertions for the event store
+  """
+
   alias TrainTicket.Repo
 
   def assert_projections(schema, expected) do
