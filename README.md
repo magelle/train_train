@@ -57,6 +57,13 @@ Dispatch an event :
 Run the observer to display lot of information about the running elixir programs
 ```:observer.start```
 
+### Tests
+
+With ExUnit
+
+- run tests ```mix test```
+- with coverage ```mix test --cover``` 
+
 ### Typings : typescpec
 
 https://hexdocs.pm/elixir/typespecs.html
