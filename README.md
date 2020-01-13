@@ -32,6 +32,7 @@ The goal here is to try to do a fully working event sourced system with elixir.
     - [V] Test an event handler
 - [V] Do some dependency injection
     - [V] With Behaviour
+- [V] Add some types with Typespec
 - [ ] Learned skills by writing a software which handle train ticket reservation
 - [ ] Do some load tests, to see how it' goes
 
