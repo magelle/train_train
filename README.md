@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/magelle/train_train.svg?branch=master)](https://travis-ci.org/magelle/train_train)
+[![Coverage Status](https://coveralls.io/repos/github/magelle/train_train/badge.svg?branch=master)](https://coveralls.io/github/magelle/train_train?branch=master)
 
 # TrainTrain
 
@@ -35,6 +36,8 @@ The goal here is to try to do a fully working event sourced system with elixir.
 - [V] Do some dependency injection
     - [V] With Behaviour
 - [V] Add some types with Typespec
+- [V] Add travis-ci config
+- [V] Add coveralls config
 - [ ] Learned skills by writing a software which handle train ticket reservation
 - [ ] Do some load tests, to see how it' goes
 

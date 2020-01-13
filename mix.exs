@@ -6,8 +6,7 @@ defmodule TrainTrain.Umbrella.MixProject do
       apps_path: "apps",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      aliases: aliases(),
-      dialyzer: [plt_add_deps: :transitive]
+      aliases: aliases()
     ]
   end
 
