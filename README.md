@@ -53,5 +53,5 @@ Dispatch an event :
 
 ### Observer
 
-Run the observer to display lot of informations about the running elixir programs
+Run the observer to display lot of information about the running elixir programs
 ```:observer.start```
