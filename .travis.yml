@@ -17,5 +17,5 @@ before_script:
 
 script:
   - mix test
-  - mix coveralls.travis
+  - mix coveralls.travis --pro
   - mix dialyzer
