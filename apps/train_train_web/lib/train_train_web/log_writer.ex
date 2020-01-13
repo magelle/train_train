@@ -5,5 +5,4 @@ defmodule TrainTrainWeb.LogWriter do
     IO.puts(msg)
     :ok
   end
-
 end

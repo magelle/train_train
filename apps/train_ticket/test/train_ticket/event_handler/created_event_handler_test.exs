@@ -20,7 +20,8 @@ defmodule CreatedEventHandlerTest do
       {:msg, msg} ->
         assert msg == "I received #{name} de #{uuid}"
     after
-      50 -> assert false # wait 50ms for this message, else fails
+      # wait 50ms for this message, else fails
+      50 -> assert false
     end
   end
 end

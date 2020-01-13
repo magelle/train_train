@@ -41,22 +41,22 @@ defmodule TrainTrainWeb.TicketController do
   end
 
   def update(conn, %{"id" => uuid, "ticket" => ticket_params}) do
-    ticket = TicketOffice.get_ticket!(uuid)
-
-    case TicketOffice.update_ticket(ticket, ticket_params) do
-      {:ok, ticket} ->
-        conn
-        |> put_flash(:info, "Ticket updated successfully.")
-        |> redirect(to: Routes.ticket_path(conn, :show, ticket))
-
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "edit.html", ticket: ticket, changeset: changeset)
-    end
+    #    ticket = TicketOffice.get_ticket!(uuid)
+    #
+    #    case TicketOffice.update_ticket(ticket, ticket_params) do
+    #      {:ok, ticket} ->
+    #        conn
+    #        |> put_flash(:info, "Ticket updated successfully.")
+    #        |> redirect(to: Routes.ticket_path(conn, :show, ticket))
+    #
+    #      {:error, %Ecto.Changeset{} = changeset} ->
+    #        render(conn, "edit.html", ticket: ticket, changeset: changeset)
+    #    end
   end
 
   def delete(conn, %{"id" => uuid}) do
     ticket = TicketOffice.get_ticket!(uuid)
-    {:ok, _ticket} = TicketOffice.delete_ticket(ticket)
+    :ok = TicketOffice.delete_ticket(ticket)
 
     conn
     |> put_flash(:info, "Ticket deleted successfully.")

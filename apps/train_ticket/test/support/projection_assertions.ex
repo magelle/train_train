@@ -4,8 +4,9 @@ defmodule TrainTicket.ProjectionAssertions do
   alias TrainTicket.Repo
 
   def assert_projections(schema, expected) do
-    actual = Repo.all(schema)
-             |> pluck(:name)
+    actual =
+      Repo.all(schema)
+      |> pluck(:name)
 
     assert actual == expected
   end
@@ -23,5 +24,4 @@ defmodule TrainTicket.ProjectionAssertions do
   defp pluck(enumerable, field) do
     Enum.map(enumerable, &Map.get(&1, field))
   end
-
 end

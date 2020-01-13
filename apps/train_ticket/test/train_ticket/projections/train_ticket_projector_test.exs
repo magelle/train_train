@@ -19,5 +19,4 @@ defmodule TrainTicketProjectorTest do
     assert actual.uuid == uuid
     assert actual.name == name
   end
-
 end

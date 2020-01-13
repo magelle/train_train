@@ -4,6 +4,12 @@ defmodule TrainTicket.TicketOffice do
   alias TrainTicket.Repo
   alias TrainTicket.TrainTicketProjection
 
+  @typedoc """
+   a uuid, e.g. eb0ecdb1-06af-4644-8f5e-4b9ce69594d8
+  """
+  @type id :: String.t()
+
+  @spec list_tickets() :: [%TrainTicketProjection{}]
   def list_tickets() do
     Repo.all(TrainTicketProjection)
   end
@@ -12,6 +18,7 @@ defmodule TrainTicket.TicketOffice do
     Application.dispatch(create, consistency: :strong)
   end
 
+  @spec get_ticket!(id) :: %TrainTicketProjection{}
   def get_ticket!(uuid) do
     Repo.get!(TrainTicketProjection, uuid)
   end
@@ -21,8 +28,10 @@ defmodule TrainTicket.TicketOffice do
 
   def delete_ticket(ticket) do
     Repo.delete(ticket)
+    :ok
   end
 
+  @spec init_ticket(%TrainTicketProjection{}) :: %Create{}
   def init_ticket(%TrainTicketProjection{uuid: uuid, name: name}) do
     %Create{uuid: uuid, name: name}
   end

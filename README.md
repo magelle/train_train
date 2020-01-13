@@ -55,3 +55,11 @@ Dispatch an event :
 
 Run the observer to display lot of information about the running elixir programs
 ```:observer.start```
+
+### Typings : typescpec
+
+https://hexdocs.pm/elixir/typespecs.html
+
+- Create a type with @type
+- Create a signature with @spec
+- Verify everything with ```mix dialyzer```

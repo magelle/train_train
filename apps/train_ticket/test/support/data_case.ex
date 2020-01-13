@@ -14,15 +14,13 @@ defmodule TrainTicket.DataCase do
     {:ok, _} = Application.ensure_all_started(:train_ticket)
     :ok = Ecto.Adapters.SQL.Sandbox.checkout(TrainTicket.Repo)
 
-    on_exit(
-      fn ->
-        :ok = Application.stop(:train_ticket)
-        :ok = Application.stop(:commanded)
-        #:ok = Application.stop(:eventstore)
+    on_exit(fn ->
+      :ok = Application.stop(:train_ticket)
+      :ok = Application.stop(:commanded)
+      # :ok = Application.stop(:eventstore)
 
-        TrainTicket.Storage.reset!()
-      end
-    )
+      TrainTicket.Storage.reset!()
+    end)
 
     :ok
   end

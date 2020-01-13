@@ -5,5 +5,4 @@ defmodule TrainTicket.Test.LogWriter do
     send(self(), {:msg, msg})
     :ok
   end
-
 end
