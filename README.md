@@ -1,4 +1,6 @@
-# TrainTrain.Umbrella
+[![Build Status](https://travis-ci.org/magelle/train_train.svg?branch=master)](https://travis-ci.org/magelle/train_train)
+
+# TrainTrain
 
 The goal here is to try to do a fully working event sourced system with elixir.
 
