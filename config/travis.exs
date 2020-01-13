@@ -27,7 +27,7 @@ config :train_ticket,
        serializer: Commanded.Serialization.JsonSerializer,
        username: "postgres",
        password: "",
-       database: "train_train_test",
+       database: "train_ticket_ev_test",
        hostname: "localhost",
        pool_size: 1
 
@@ -35,7 +35,7 @@ config :train_ticket,
        TrainTicket.Repo,
        username: "postgres",
        password: "",
-       database: "train_train_test",
+       database: "train_train_projections_test",
        hostname: "localhost",
        pool: Ecto.Adapters.SQL.Sandbox
 
