@@ -19,3 +19,4 @@ script:
   - mix test
   - mix coveralls.travis --pro
   - mix dialyzer
+  - mix credo --strict
