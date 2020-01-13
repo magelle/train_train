@@ -16,6 +16,6 @@ before_script:
   - psql -c 'create database train_train_projections_test;' -U postgres
 
 script:
-  - mix dialyzer
   - mix test
-  - mix coveralls.travis
+  - mix coveralls
+  - mix dialyzer
