@@ -1,4 +1,5 @@
 language: elixir
+os: linux
 elixir: '1.9.4'
 otp_release: '22.0'
 addons:
