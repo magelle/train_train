@@ -14,30 +14,30 @@ The goal here is to try to do a fully working event sourced system with elixir.
 
 ## The steps
 
-- [V] Having a working env
-- [V] Having a working Phoenix and be able to display a page
-- [V] Do a simple CRUD application
-  - [V] Create the table
-  - [V] Insert in the table
-  - [V] Display the elements of the table
-  - [V] Add modify and delete feature
-  - [V] Test everything, we are not that rude !
-- [V] Add interfaces on top of the Ecto CRUD
-- [V] add event sourcing on top of CRUD
-  - [V] Create an Aggregate
-  - [V] Be able to handle command
-  - [V] Be able to handle events
-  - [V] Be able to query a projection
-  - [V] Bind everything to a HTML GUI
-  - [V] Tests !!!
-    - [V] Test the aggregate
-    - [V] Test the projection
-    - [V] Test an event handler
-- [V] Do some dependency injection
-    - [V] With Behaviour
-- [V] Add some types with Typespec
-- [V] Add travis-ci config
-- [V] Add coveralls config
+- [x] Having a working env
+- [x] Having a working Phoenix and be able to display a page
+- [x] Do a simple CRUD application
+  - [x] Create the table
+  - [x] Insert in the table
+  - [x] Display the elements of the table
+  - [x] Add modify and delete feature
+  - [x] Test everything, we are not that rude !
+- [x] Add interfaces on top of the Ecto CRUD
+- [x] add event sourcing on top of CRUD
+  - [x] Create an Aggregate
+  - [x] Be able to handle command
+  - [x] Be able to handle events
+  - [x] Be able to query a projection
+  - [x] Bind everything to a HTML GUI
+  - [x] Tests !!!
+    - [x] Test the aggregate
+    - [x] Test the projection
+    - [x] Test an event handler
+- [x] Do some dependency injection
+    - [x] With Behaviour
+- [x] Add some types with Typespec
+- [x] Add travis-ci config
+- [x] Add coveralls config
 - [ ] Learned skills by writing a software which handle train ticket reservation
 - [ ] Do some load tests, to see how it' goes
 
