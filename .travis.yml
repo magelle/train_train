@@ -1,22 +1,27 @@
-language: elixir
+jobs:
+  include:
+  - language: elixir
+    elixir:
+      - '1.9.4'
+    otp_release:
+      - '22.0'
+    addons:
+      postgresql: '9.4'
+    before_script:
+      - cp config/travis.exs config/test.exs
+      - mix do ecto.create ecto.migrate event_store.create event_store.init
+      - psql -c 'create database train_train_test;' -U postgres
+      - psql -c 'create database train_ticket_ev_test;' -U postgres
+      - psql -c 'create database train_train_projections_test;' -U postgres
+    script:
+      - mix test
+      - mix coveralls.travis --pro
+      - mix credo --strict
 
-elixir:
-  - '1.9.4'
-otp_release:
-  - '22.0'
-
-addons:
-  postgresql: '9.4'
-
-before_script:
-  - cp config/travis.exs config/test.exs
-  - mix do ecto.create ecto.migrate event_store.create event_store.init
-  - psql -c 'create database train_train_test;' -U postgres
-  - psql -c 'create database train_ticket_ev_test;' -U postgres
-  - psql -c 'create database train_train_projections_test;' -U postgres
-
-script:
-  - mix test
-  - mix coveralls.travis --pro
-  - mix dialyzer
-  - mix credo --strict
+  - language: elixir
+    elixir:
+      - '1.9.4'
+    otp_release:
+      - '22.0'
+    script:
+      - mix dialyzer
