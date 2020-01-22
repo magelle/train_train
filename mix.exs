@@ -11,6 +11,9 @@ defmodule TrainTrain.Umbrella.MixProject do
       preferred_cli_env: [
         coveralls: :test,
         "coveralls.travis": :test
+      ],
+      dialyzer: [
+        plt_file: {:no_warn, "dialyzer/dialyzer.plt"}
       ]
     ]
   end
